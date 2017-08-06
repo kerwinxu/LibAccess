@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB477588-377F-4ED0-91A3-8B4696E4B2E2}</ProjectGuid>
+    <ProjectGuid>{70A1EF2F-CDEB-4C67-8590-A29CAFF321BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Xuhengxiao.LibAccess</RootNamespace>
-    <AssemblyName>LibAccess</AssemblyName>
+    <RootNamespace>LibAccessDemo</RootNamespace>
+    <AssemblyName>LibAccessDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -38,45 +42,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AccessItem.Designer.cs">
-      <DependentUpon>AccessItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AccessManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AccessManager.Designer.cs">
-      <DependentUpon>AccessManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+    <Compile Include="UserControl_accessItem.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AccessItem.resx">
-      <DependentUpon>AccessItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AccessManager.resx">
-      <DependentUpon>AccessManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Compile Include="UserControl_accessItem.Designer.cs">
+      <DependentUpon>UserControl_accessItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_access_manager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_access_manager.Designer.cs">
+      <DependentUpon>UserControl_access_manager.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DbHelper\DbHelper\DbHelper.csproj">
       <Project>{b60e574d-9f42-4b0f-b68f-c1b6bcbbee87}</Project>
       <Name>DbHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibAccess\LibAccess.csproj">
+      <Project>{bb477588-377f-4ed0-91a3-8b4696e4b2e2}</Project>
+      <Name>LibAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserControl_accessItem.resx">
+      <DependentUpon>UserControl_accessItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_access_manager.resx">
+      <DependentUpon>UserControl_access_manager.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
